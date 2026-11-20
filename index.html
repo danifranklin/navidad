@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ángel Secreto 2026 | Wishlist Lic. Dani — Proyecto Obra Vial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        slateRoad: {
+                            850: '#162032',
+                            900: '#0F172A',
+                            950: '#090E1A',
+                        },
+                        forestPine: {
+                            700: '#155E42',
+                            800: '#0F4631',
+                            900: '#092E20',
+                        },
+                        goldChampagne: {
+                            400: '#FBBF24',
+                            500: '#D97706',
+                            600: '#B45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Patrón sutil de curvas topográficas y trazado vial */
+        .topo-road-bg {
+            background-color: #0F172A;
+            background-image: 
+                radial-gradient(circle at 85% 15%, rgba(21, 94, 66, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.15) 0%, transparent 45%),
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 30 10, 60 30 T 120 30 M0 70 Q 30 50, 60 70 T 120 70 M0 110 Q 30 90, 60 110 T 120 110' fill='none' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='1.5'/%3E%3Cline x1='60' y1='0' x2='60' y2='120' stroke='%23FBBF24' stroke-opacity='0.04' stroke-width='1' stroke-dasharray='6 6'/%3E%3C/svg%3E");
+        }
+
+        /* Animación suave para copos de nieve / destellos dorados */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        /* Estilo de línea divisoria tipo carretera */
+        .road-divider {
+            height: 3px;
+            background: repeating-linear-gradient(
+                to right,
+                #FBBF24 0,
+                #FBBF24 14px,
+                transparent 14px,
+                transparent 24px
+            );
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-900">
+
+    <!-- Notificación Toast flotante (reemplazo elegante a alert()) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- HERO / ENCABEZADO PRINCIPAL -->
+    <header class="topo-road-bg text-white relative overflow-hidden border-b-4 border-amber-500">
+        <!-- Barra superior corporativa / navideña -->
+        <div class="border-b border-white/10 bg-slateRoad-950/50 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 text-slate-300">
+                    <!-- Icono Ruta / Vialidad -->
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                    </svg>
+                    <span class="font-medium tracking-wide uppercase text-slate-200">Equipo de Obra Vial • Confraternidad Navideña</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-forestPine-700/80 text-emerald-200 border border-emerald-500/30 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        Ángel Secreto 2026
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Hero -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-amber-300 text-xs sm:text-sm font-medium">
+                        <!-- Icono Estrella Navideña -->
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span>Edición Especial de Fin de Año — Km 0+000 al Éxito</span>
+                    </div>
+
+                    <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                        ¡Hola, equipo! Soy el <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200">Lic. Dani</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Cerramos un gran año articulando con las comunidades, trazando caminos y superando cada tramo en obra. Para facilitarle la ruta a mi <strong class="text-white font-semibold">Ángel Secreto</strong>, he preparado esta guía con mis opciones favoritas de regalo. ¡Gracias por el compañerismo y felices fiestas!
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+                        <a href="#opciones-regalo" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                            </svg>
+                            Ver Opciones de Regalo
+                        </a>
+
+                        <button onclick="toggleSecretModal(true)" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold text-sm sm:text-base backdrop-blur-sm transition-all">
+                            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Mensaje para mi Ángel Secreto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta resumen de perfil lateral -->
+                <div class="lg:col-span-4">
+                    <div class="bg-slateRoad-850/90 border border-white/15 rounded-2xl p-6 shadow-2xl backdrop-blur-md relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-amber-400/10 rounded-bl-full pointer-events-none"></div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-forestPine-700 to-forestPine-900 border border-amber-400/40 flex items-center justify-center text-amber-300 font-display font-extrabold text-xl shadow-inner shrink-0">
+                                LD
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Participante Oficial</span>
+                                <h2 class="font-display text-xl font-bold text-white">Lic. Dani</h2>
+                                <p class="text-xs text-slate-300 font-medium">Especialista Social • Proyecto Obra Vial</p>
+                            </div>
+                        </div>
+
+                        <div class="road-divider opacity-40 my-4"></div>
+
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center justify-between text-slate-300">
+                                <span class="text-slate-400">Opciones listadas:</span>
+                                <span id="hero-gift-count" class="font-bold text-white bg-white/10 px-2.5 py-0.5 rounded-lg">5 alternativas</span>
+                            </div>
+                            <div class="flex items-center justify-between text-slate-300">
+                                <span class="text-slate-400">Estado de selección:</span>
+                                <span id="hero-status-badge" class="font-semibold text-emerald-400 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                    5 disponibles
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between text-slate-300">
+                                <span class="text-slate-400">Talla de ropa:</span>
+                                <span class="font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2.5 py-0.5 rounded-lg">Talla M</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-14">
+
+        <!-- BARRA DE FILTROS Y ESTADO DE RESERVA -->
+        <section id="opciones-regalo" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+                <div>
+                    <div class="flex items-center gap-2 text-forestPine-700 font-semibold text-xs uppercase tracking-wider mb-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>Catálogo Seleccionado</span>
+                    </div>
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Mis Opciones de Regalo
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-1">
+                        Cualquiera de estas alternativas será súper útil tanto en campo como en oficina. Puedes marcar una opción para llevar tu control privado.
+                    </p>
+                </div>
+
+                <!-- Filtros por categoría -->
+                <div class="flex flex-wrap items-center gap-2" id="category-filters">
+                    <button onclick="filterGifts('all')" data-filter="all" class="filter-btn active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-white shadow-sm">
+                        Todas (5)
+                    </button>
+                    <button onclick="filterGifts('Campo & Oficina')" data-filter="Campo & Oficina" class="filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        Campo & Oficina
+                    </button>
+                    <button onclick="filterGifts('Estilo & Uso Diario')" data-filter="Estilo & Uso Diario" class="filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        Estilo & Uso Diario
+                    </button>
+                    <button onclick="filterGifts('Tecnología')" data-filter="Tecnología" class="filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        Tecnología
+                    </button>
+                </div>
+            </div>
+
+            <!-- Banner informativo cuando hay un regalo seleccionado -->
+            <div id="reserved-banner" class="hidden bg-emerald-950 text-white rounded-2xl p-4 sm:p-5 border border-emerald-700/60 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300 shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase tracking-wider text-emerald-300 font-semibold">Selección guardada en este navegador</p>
+                        <p class="text-sm sm:text-base font-medium">Has marcado: <strong id="reserved-gift-name" class="text-amber-300"></strong></p>
+                    </div>
+                </div>
+                <button onclick="clearReservation()" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-colors shrink-0">
+                    Liberar selección
+                </button>
+            </div>
+
+            <!-- GRID DE TARJETAS DE REGALO -->
+            <div id="gifts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Las tarjetas se renderizan dinámicamente desde JS para interactividad completa -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PREFERENCIAS, TALLAS Y NOTAS ADICIONALES -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <!-- Panel de Especificaciones / Tallas del Lic. Dani -->
+            <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-forestPine-800 text-amber-400 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-lg font-bold text-slate-900">Ficha Técnica de Preferencias</h3>
+                        <p class="text-xs text-slate-500">Datos útiles por si eliges ropa o accesorios</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                        <span class="block text-xs text-slate-400 font-medium">Camisa / Casaca / Polo</span>
+                        <span class="font-display font-bold text-forestPine-800 text-base">Talla M (Exacta)</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                        <span class="block text-xs text-slate-400 font-medium">Colores Preferidos</span>
+                        <span class="font-display font-bold text-slate-800 text-base">Negro, Azul, Verde</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                        <span class="block text-xs text-slate-400 font-medium">Rol en Obra</span>
+                        <span class="font-display font-bold text-slate-800 text-base">Especialista Social</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                        <span class="block text-xs text-slate-400 font-medium">Bebida favorita</span>
+                        <span class="font-display font-bold text-slate-800 text-base">Café pasado / Té</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200/70 text-xs sm:text-sm text-amber-950 flex gap-3">
+                    <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <p>
+                        <strong>Tip de obra:</strong> Cualquier detalle pensado con cariño y practicidad será recibido con mucha gratitud. ¡No te compliques con la envoltura!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bitácora Interactiva de Notas Adicionales -->
+            <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm space-y-5">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-lg font-bold text-slate-900">Bitácora de Notas & Pistas</h3>
+                            <p class="text-xs text-slate-500">Apuntes adicionales o recordatorios personales para el intercambio</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600">Editable</span>
+                </div>
+
+                <!-- Lista de notas -->
+                <div id="notes-list" class="space-y-2.5">
+                    <!-- Notas renderizadas por JS -->
+                </div>
+
+                <!-- Formulario rápido para agregar nota -->
+                <form onsubmit="addNote(event)" class="flex flex-col sm:flex-row gap-2.5 pt-2">
+                    <input 
+                        type="text" 
+                        id="new-note-input" 
+                        placeholder="Ej. Preferencia de color neutro, talla M/L, o pista anónima..." 
+                        class="flex-1 px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-forestPine-700 focus:border-transparent bg-slate-50 focus:bg-white transition-all"
+                        required
+                    >
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-forestPine-800 hover:bg-forestPine-700 text-white font-semibold text-sm shadow-sm transition-colors inline-flex items-center justify-center gap-1.5 shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        Agregar Nota
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- TARJETA DESTACADA DE COMPAÑERISMO DE OBRA -->
+        <section class="topo-road-bg rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden border border-slate-800 shadow-xl">
+            <div class="max-w-3xl mx-auto text-center space-y-4 relative z-10">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-400/15 border border-amber-400/30 text-amber-400 mx-auto animate-float">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-display text-2xl sm:text-3xl font-extrabold">
+                    "Más allá de los planos y el asfalto, lo mejor de esta obra es el equipo"
+                </h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Que esta Navidad traiga salud, unión familiar y nuevos proyectos exitosos para cada ingeniero, técnico, maestro, operador y administrativo de nuestra obra vial.
+                </p>
+                <div class="pt-2">
+                    <button onclick="toggleSecretModal(true)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm transition-colors">
+                        Leer carta completa del Lic. Dani
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-forestPine-700"></span>
+                <span class="font-semibold text-slate-700">Lic. Dani</span>
+                <span>• Intercambio Navideño Obra Vial 2026</span>
+            </div>
+            <p>Diseñado con espíritu navideño y precisión en cada kilómetro.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: MENSAJE PARA MI ÁNGEL SECRETO -->
+    <div id="secret-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 transform transition-all">
+            <!-- Cabecera Modal -->
+            <div class="topo-road-bg p-6 text-white relative border-b-2 border-amber-400">
+                <button onclick="toggleSecretModal(false)" aria-label="Cerrar ventana" class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <span class="inline-block px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-semibold mb-2">
+                    Sobre Confidencial • Navidad 2026
+                </span>
+                <h3 class="font-display text-2xl font-extrabold">Para mi Ángel Secreto</h3>
+                <p class="text-slate-300 text-xs mt-1">De: Lic. Dani • Especialista Social — Obra Vial</p>
+            </div>
+
+            <!-- Cuerpo Modal -->
+            <div class="p-6 sm:p-7 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p>
+                    ¡Hola, compañero(a) de ruta! Si estás leyendo esto, significa que te tocó ser mi <strong>Ángel Secreto</strong> en este cierre de año.
+                </p>
+                <p>
+                    Quiero agradecerte de antemano por tomarte el tiempo de revisar estas sugerencias. Ha sido un año intenso entre talleres participativos, gestión comunitaria, avances de frente y jornadas en campo, pero compartir el día a día con un equipo tan comprometido hace que todo valga la pena.
+                </p>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-slate-600 text-xs sm:text-sm italic">
+                    "No importa cuál opción elijas —o si decides sorprenderme con algo distinto—; lo que más valoro es el buen ánimo, el compañerismo y compartir un gran momento en nuestra celebración navideña."
+                </div>
+                <p class="font-semibold text-slate-900 pt-1">
+                    ¡Un fuerte abrazo y Feliz Navidad!<br>
+                    <span class="text-forestPine-700">— Lic. Dani (Especialista Social)</span>
+                </p>
+            </div>
+
+            <!-- Pie Modal -->
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button onclick="toggleSecretModal(false)" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors">
+                    ¡Entendido, listo para elegir!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DE INTERACTIVIDAD -->
+    <script>
+        // Catálogo de opciones de regalo del Lic. Dani (Especialista Social)
+        const giftOptions = [
+            {
+                id: 'gift-vouchera-armuz',
+                number: '01',
+                featured: true,
+                title: 'Vouchera / Billetera Ejecutiva tipo Chequera Armuz (Cuero Genuino)',
+                category: 'Estilo & Uso Diario',
+                budget: 'Ver precio oficial en Armuz.pe',
+                specs: 'Cuero genuino color Negro • Protección RFID • Múltiples tarjeteros • Visor para DNI y bolsillo interno con broche tipo correa',
+                whereToFind: 'Tienda Oficial Armuz Perú (armuz.pe)',
+                referenceUrl: 'https://www.armuz.pe/products/billetera-ejecutiva-tipo-chequera',
+                referenceLabel: 'Ver modelo exacto en Armuz.pe',
+                description: 'Vouchera ejecutiva vertical de cuero genuino negro con amplio espacio para documentos, comprobantes de gestión social, tarjetas con bloqueo RFID, visor transparente para identificación y compartimento interno con cierre de correa.',
+                tag: '★ Opción Destacada',
+                visualPreview: `
+                    <div class="mb-4 rounded-xl bg-gradient-to-br from-slate-900 via-slateRoad-850 to-slate-900 p-4 border border-slate-700/80 flex flex-col sm:flex-row items-center gap-4 relative overflow-hidden">
+                        <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-amber-400/10 rounded-full blur-xl pointer-events-none"></div>
+                        <!-- Ilustración técnica detallada de la Vouchera Negra Armuz abierta -->
+                        <div class="w-40 h-32 shrink-0 bg-slate-800/70 rounded-xl border border-white/10 p-2 flex items-center justify-center shadow-inner">
+                            <svg viewBox="0 0 180 140" class="w-full h-full drop-shadow-md" aria-label="Vista previa Vouchera Ejecutiva Negra Armuz">
+                                <!-- Cuerpo externo cuero negro -->
+                                <rect x="12" y="8" width="156" height="124" rx="7" fill="#141416" stroke="#3f3f46" stroke-width="1.5"/>
+                                <!-- Pliegue central con billete asomando -->
+                                <rect x="83" y="14" width="10" height="95" rx="1" fill="#e2e8f0"/>
+                                <rect x="85" y="18" width="6" height="85" fill="#94a3b8" opacity="0.5"/>
+                                <line x1="90" y1="8" x2="90" y2="132" stroke="#09090b" stroke-width="2.5"/>
+                                <!-- Ala izquierda: 5 ranuras de tarjetas -->
+                                <rect x="19" y="15" width="62" height="10" rx="2" fill="#38bdf8" opacity="0.85"/>
+                                <rect x="18" y="21" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="19" y="29" width="62" height="9" rx="2" fill="#1e293b"/>
+                                <rect x="18" y="34" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="19" y="42" width="62" height="9" rx="2" fill="#d97706" opacity="0.85"/>
+                                <rect x="18" y="47" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="19" y="55" width="62" height="9" rx="2" fill="#15803d" opacity="0.9"/>
+                                <rect x="18" y="60" width="64" height="9" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <!-- Ala izquierda inferior: Visor transparente DNI con tarjeta Armuz -->
+                                <rect x="20" y="74" width="60" height="50" rx="4" fill="#b45309" stroke="#27272a" stroke-width="2"/>
+                                <rect x="24" y="78" width="52" height="42" rx="2" fill="#d97706" opacity="0.35"/>
+                                <text x="50" y="102" text-anchor="middle" fill="#fef3c7" font-size="8" font-family="sans-serif" font-weight="bold" letter-spacing="0.5">ARMUZ</text>
+                                <text x="50" y="112" text-anchor="middle" fill="#fde68a" font-size="5.5" font-family="sans-serif">RFID • DNI</text>
+                                <!-- Ala derecha: 5 ranuras de tarjetas -->
+                                <rect x="99" y="15" width="62" height="10" rx="2" fill="#22c55e" opacity="0.8"/>
+                                <rect x="98" y="21" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="99" y="29" width="62" height="9" rx="2" fill="#e11d48" opacity="0.75"/>
+                                <rect x="98" y="34" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="99" y="42" width="62" height="9" rx="2" fill="#f8fafc" opacity="0.9"/>
+                                <rect x="98" y="47" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <rect x="99" y="55" width="62" height="9" rx="2" fill="#0284c7" opacity="0.9"/>
+                                <rect x="98" y="60" width="64" height="8" rx="1" fill="#1c1917" stroke="#27272a" stroke-width="0.8"/>
+                                <!-- Ala derecha inferior: Bolsillo con solapa y broche tipo correa -->
+                                <rect x="98" y="72" width="64" height="53" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+                                <path d="M98 74 H162 V88 Q130 96 98 88 Z" fill="#27272a"/>
+                                <!-- Correa vertical con presilla -->
+                                <rect x="126" y="80" width="8" height="32" rx="4" fill="#141416" stroke="#52525b" stroke-width="1"/>
+                                <rect x="123" y="94" width="14" height="5" rx="1.5" fill="#27272a" stroke="#71717a" stroke-width="0.8"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 text-left space-y-1.5">
+                            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-semibold">
+                                <span>Referencia Visual • Cuero Genuino Negro</span>
+                            </div>
+                            <p class="text-white text-xs sm:text-sm font-semibold leading-snug">
+                                Modelo Ejecutivo Vertical tipo Chequera (Marca Armuz)
+                            </p>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Incluye 10+ ranuras para tarjetas, protección RFID, visor para DNI y bolsillo interno con broche.
+                            </p>
+                        </div>
+                    </div>
+                `,
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`
+            },
+            {
+                id: 'gift-1',
+                number: '02',
+                title: 'Termo Térmico de Acero Inoxidable (750 ml - 1 L)',
+                category: 'Campo & Oficina',
+                budget: 'S/ 90 – S/ 140 (Aprox.)',
+                specs: 'Color Negro Mate, Verde Bosque o Azul Marino • Doble pared al vacío',
+                whereToFind: 'Tiendas Outdoor, Sodimac, Saga Falabella o Mercado Libre (Ej. Stanley / Thermos / Contigo)',
+                description: 'Ideal para mantener el café caliente durante las visitas comunitarias tempranas en campo o el agua fresca en recorridos por el tramo vial.',
+                tag: 'Favorito para campo',
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`
+            },
+            {
+                id: 'gift-2',
+                number: '03',
+                title: 'Casaca Cortavientos / Térmica Ligera para Campo (Talla M)',
+                category: 'Campo & Oficina',
+                budget: 'S/ 110 – S/ 160 (Aprox.)',
+                specs: 'Talla M (Exacta) • Color Negro, Azul Marino o Verde Oscuro • Repelente al agua y viento',
+                whereToFind: 'Columbia, Lippi, Doite, Saga Falabella o Ripley',
+                description: 'Súper útil para las salidas a campo en zonas con viento o clima variable durante la gestión social en la obra vial.',
+                tag: 'Talla M • Práctica',
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>`
+            },
+            {
+                id: 'gift-3',
+                number: '04',
+                title: 'Camisa Casual / Polo Piqué Ejecutivo (Talla M)',
+                category: 'Estilo & Uso Diario',
+                budget: 'S/ 85 – S/ 130 (Aprox.)',
+                specs: 'Talla M (Corte regular) • Tonos neutros o institucionales (Azul marino, Blanco, Verde bosque)',
+                whereToFind: 'John Holden, Pionier, Dockers, Zara o tiendas por departamento',
+                description: 'Una prenda versátil y cómoda para reuniones de coordinación, talleres participativos con autoridades o eventos de confraternidad.',
+                tag: 'Talla M • Clásico',
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>`
+            },
+            {
+                id: 'gift-4',
+                number: '05',
+                title: 'Power Bank de Carga Rápida (10,000 mAh o 20,000 mAh)',
+                category: 'Tecnología',
+                budget: 'S/ 80 – S/ 130 (Aprox.)',
+                specs: 'Salida USB-C y USB-A • Diseño compacto • Color Negro o Azul oscuro',
+                whereToFind: 'Coolbox, Xiaomi Store, Phantom o Mercado Libre (Anker / Xiaomi / Baseus)',
+                description: 'Indispensable cuando estamos en comunidades o tramos alejados sin acceso inmediato a corriente eléctrica y necesitamos mantener el celular operativo.',
+                tag: 'Respaldo total',
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`
+            }
+        ];
+
+        // Notas iniciales predeterminadas
+        const defaultNotes = [
+            { id: 1, text: 'Mi talla de ropa (camisas, casacas y polos) es Talla M.' },
+            { id: 2, text: 'La vouchera ejecutiva negra de Armuz (Opción 01) es mi favorita por su capacidad para documentos y protección RFID.' },
+            { id: 3, text: 'Colores sugeridos: negro, azul marino, verde bosque o tonos neutros.' }
+        ];
+
+        // Estado de la aplicación
+        let currentFilter = 'all';
+        let reservedGiftId = localStorage.getItem('dani_secret_santa_reserved') || null;
+        let notes = JSON.parse(localStorage.getItem('dani_secret_santa_notes_v2')) || defaultNotes;
+
+        // Renderizar tarjetas de regalos
+        function renderGifts() {
+            const grid = document.getElementById('gifts-grid');
+            const filtered = currentFilter === 'all' 
+                ? giftOptions 
+                : giftOptions.filter(g => g.category === currentFilter);
+
+            grid.innerHTML = filtered.map(gift => {
+                const isReserved = reservedGiftId === gift.id;
+                const isFeatured = Boolean(gift.featured);
+
+                return `
+                <article class="group bg-white rounded-2xl border ${
+                    isReserved 
+                        ? 'border-emerald-600 ring-2 ring-emerald-600/20' 
+                        : isFeatured 
+                            ? 'border-amber-400 ring-2 ring-amber-400/20 md:col-span-2' 
+                            : 'border-slate-200/90 hover:border-amber-400/80'
+                } p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <!-- Indicador superior sutil -->
+                    <div class="absolute top-0 left-0 right-0 h-1.5 ${
+                        isReserved 
+                            ? 'bg-emerald-600' 
+                            : isFeatured 
+                                ? 'bg-gradient-to-r from-amber-500 via-forestPine-700 to-amber-500' 
+                                : 'bg-gradient-to-r from-forestPine-800 via-amber-500 to-slate-800 opacity-80'
+                    }"></div>
+
+                    <div>
+                        <!-- Fila superior: Número, Categoría y Tag -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-9 h-9 rounded-xl ${
+                                    isReserved 
+                                        ? 'bg-emerald-700 text-white' 
+                                        : isFeatured 
+                                            ? 'bg-amber-500 text-slate-950' 
+                                            : 'bg-slate-900 text-amber-400'
+                                } font-display font-extrabold text-sm flex items-center justify-center shadow-sm">
+                                    ${gift.number}
+                                </span>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700">
+                                    ${gift.category}
+                                </span>
+                            </div>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full ${
+                                isReserved 
+                                    ? 'bg-emerald-100 text-emerald-800' 
+                                    : isFeatured 
+                                        ? 'bg-amber-400/20 text-amber-900 border border-amber-400' 
+                                        : 'bg-amber-50 text-amber-800 border border-amber-200/70'
+                            }">
+                                ${isReserved ? '✓ Elegido por ti' : gift.tag}
+                            </span>
+                        </div>
+
+                        <!-- Título e icono -->
+                        <div class="flex items-start gap-3.5 mb-3">
+                            <div class="p-2.5 rounded-xl ${isFeatured ? 'bg-amber-500/15 text-amber-700' : 'bg-forestPine-800/10 text-forestPine-800'} shrink-0 mt-0.5">
+                                ${gift.icon}
+                            </div>
+                            <h3 class="font-display text-lg sm:text-xl font-bold text-slate-900 leading-snug group-hover:text-forestPine-800 transition-colors">
+                                ${gift.title}
+                            </h3>
+                        </div>
+
+                        <!-- Vista visual especial si el producto la incluye -->
+                        ${gift.visualPreview ? gift.visualPreview : ''}
+
+                        <!-- Descripción -->
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            ${gift.description}
+                        </p>
+
+                        <!-- Detalles técnicos en caja limpia -->
+                        <div class="space-y-2 p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs sm:text-sm mb-5">
+                            <div class="flex items-start gap-2">
+                                <span class="font-semibold text-slate-700 shrink-0">Referencia:</span>
+                                <span class="text-forestPine-800 font-bold">${gift.budget}</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="font-semibold text-slate-700 shrink-0">Detalles:</span>
+                                <span class="text-slate-600">${gift.specs}</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="font-semibold text-slate-700 shrink-0">Dónde ver:</span>
+                                <span class="text-slate-600">${gift.whereToFind}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-2.5">
+                        ${gift.referenceUrl ? `
+                            <a 
+                                href="${gift.referenceUrl}" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="w-full sm:w-auto py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
+                            >
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                                <span>${gift.referenceLabel || 'Ver enlace de referencia'}</span>
+                            </a>
+                        ` : ''}
+
+                        <button 
+                            onclick="toggleReserve('${gift.id}')" 
+                            class="flex-1 py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 ${
+                                isReserved 
+                                ? 'bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm' 
+                                : 'bg-slate-900 hover:bg-forestPine-800 text-white shadow-sm'
+                            }"
+                        >
+                            ${isReserved 
+                                ? `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Seleccionado`
+                                : `<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg> Marcar como elegido`
+                            }
+                        </button>
+
+                        <button 
+                            onclick="copyGiftDetails('${gift.id}')" 
+                            title="Copiar detalles del regalo"
+                            class="py-2.5 px-3.5 rounded-xl bg-slate-100 hover:bg-amber-100 text-slate-700 hover:text-amber-900 font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-1.5 shrink-0"
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Copiar</span>
+                        </button>
+                    </div>
+                </article>
+                `;
+            }).join('');
+
+            updateReservationUI();
+        }
+
+        // Actualizar banners y estado superior de reserva
+        function updateReservationUI() {
+            const banner = document.getElementById('reserved-banner');
+            const nameEl = document.getElementById('reserved-gift-name');
+            const heroStatus = document.getElementById('hero-status-badge');
+
+            if (reservedGiftId) {
+                const gift = giftOptions.find(g => g.id === reservedGiftId);
+                if (gift) {
+                    banner.classList.remove('hidden');
+                    nameEl.textContent = gift.title;
+                    heroStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400"></span> 1 opción marcada`;
+                    heroStatus.className = 'font-semibold text-amber-300 flex items-center gap-1.5';
+                    return;
+                }
+            }
+
+            banner.classList.add('hidden');
+            heroStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span> ${giftOptions.length} disponibles`;
+            heroStatus.className = 'font-semibold text-emerald-400 flex items-center gap-1.5';
+        }
+
+        // Marcar o desmarcar regalo
+        function toggleReserve(giftId) {
+            if (reservedGiftId === giftId) {
+                reservedGiftId = null;
+                localStorage.removeItem('dani_secret_santa_reserved');
+                showToast('Opción liberada. Puedes elegir otra alternativa.');
+            } else {
+                reservedGiftId = giftId;
+                localStorage.setItem('dani_secret_santa_reserved', giftId);
+                const gift = giftOptions.find(g => g.id === giftId);
+                showToast(`¡Excelente elección! Guardaste "${gift.title}" en tu vista.`);
+            }
+            renderGifts();
+        }
+
+        function clearReservation() {
+            reservedGiftId = null;
+            localStorage.removeItem('dani_secret_santa_reserved');
+            renderGifts();
+            showToast('Selección restablecida.');
+        }
+
+        // Filtrar categorías
+        function filterGifts(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'filter-btn active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-white shadow-sm';
+                } else {
+                    btn.className = 'filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+                }
+            });
+            renderGifts();
+        }
+
+        // Copiar detalle al portapapeles usando execCommand para máxima compatibilidad en iframes
+        function copyGiftDetails(giftId) {
+            const gift = giftOptions.find(g => g.id === giftId);
+            if (!gift) return;
+
+            const linkLine = gift.referenceUrl ? `\n🔗 Enlace de referencia: ${gift.referenceUrl}` : '';
+            const textToCopy = `🎄 Ángel Secreto 2026 - Lic. Dani (Especialista Social - Obra Vial)\n🎁 Opción ${gift.number}: ${gift.title}\n📋 Especificaciones: ${gift.specs}\n📍 Sugerencia: ${gift.whereToFind}${linkLine}`;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+
+            try {
+                document.execCommand('copy');
+                showToast('Detalles del regalo copiados al portapapeles.');
+            } catch (err) {
+                showToast('No se pudo copiar automáticamente.');
+            } finally {
+                document.body.removeChild(tempTextArea);
+            }
+        }
+
+        // Renderizar notas adicionales
+        function renderNotes() {
+            const list = document.getElementById('notes-list');
+            if (notes.length === 0) {
+                list.innerHTML = `<p class="text-sm text-slate-400 italic py-2">No hay notas adicionales registradas.</p>`;
+                return;
+            }
+
+            list.innerHTML = notes.map(note => `
+                <div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/70 text-sm text-slate-700">
+                    <div class="flex items-start gap-2.5">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
+                        <span>${escapeHTML(note.text)}</span>
+                    </div>
+                    <button onclick="deleteNote(${note.id})" title="Eliminar nota" class="text-slate-400 hover:text-rose-600 p-1 rounded-lg transition-colors shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function addNote(event) {
+            event.preventDefault();
+            const input = document.getElementById('new-note-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            notes.push({ id: Date.now(), text });
+            localStorage.setItem('dani_secret_santa_notes_v2', JSON.stringify(notes));
+            input.value = '';
+            renderNotes();
+            showToast('Nota agregada a la bitácora.');
+        }
+
+        function deleteNote(id) {
+            notes = notes.filter(n => n.id !== id);
+            localStorage.setItem('dani_secret_santa_notes_v2', JSON.stringify(notes));
+            renderNotes();
+            showToast('Nota eliminada.');
+        }
+
+        // Control del Modal
+        function toggleSecretModal(show) {
+            const modal = document.getElementById('secret-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Notificación Toast elegante
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl border border-amber-400/40 text-xs sm:text-sm font-medium flex items-center gap-2.5 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto';
+            toast.innerHTML = `
+                <span class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
+                <span>${escapeHTML(message)}</span>
+            `;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        // Sanitización básica para notas ingresadas por usuario
+        function escapeHTML(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleSecretModal(false);
+        });
+
+        // Inicialización al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGifts();
+            renderNotes();
+        });
+    </script>
+</body>
+</html>
